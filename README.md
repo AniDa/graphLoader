@@ -17,14 +17,14 @@ From scrath on MAC:
 
 Change the following values and save the file:
 
-```[Parameters]
+``` [Parameters]
 NumberOfBuffers = 340000
 MaxDirtyBuffers = 250000
 
 
 [SPARQL]
 MaxQueryCostEstimationTime = 4000 ; in seconds
-MaxQueryExecutionTime = 600 ; in seconds```
+MaxQueryExecutionTime = 600 ; in seconds ```
 
 
 3) Start the server
