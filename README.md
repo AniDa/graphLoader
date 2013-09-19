@@ -12,6 +12,7 @@ From scrath on MAC:
 2) go to ```virtuoso.ini``` and change couple of values there:
 
 ```cd /usr/local/Cellar/virtuoso/7.0.0/var/lib/virtuoso/db```
+
 ```vim virtuoso.ini```
 
 Change the following values and save the file:
