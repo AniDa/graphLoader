@@ -1,13 +1,15 @@
 graphLoader
 ===========
 
-Graph loader (under separate named graphs) to Virtuoso 7.0.0.
+This script loads graphs under separate named graphs in Virtuoso 7.0.0. How to do it? First, you need Virtuoso. 
+Assuming you don't have it just follow the steps from the beginning. It's a Mac OS X installation.
 
-From scrath on Mac OS X:
 
-You can skip this step if you already have homebrew installed.
+You can skip Homebrew and Virtuoso installations if you already have then installed.
 
-Initial step: Download the latest version of the Homebrew though its official [website](http://brew.sh/)
+***Homebrew installation***
+
+Download the latest version of the Homebrew though its official [website](http://brew.sh/)
 Easiest way would be to just use the following command in the terminal
 ````
 $ ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
@@ -18,7 +20,7 @@ $ brew update
 #Then you can check the status of the installation by running the following command.
 $ brew doctor
 ````
-And now to the point.
+*** Virtuoso installation ****
 
 1) install Virtuoso
 
@@ -41,7 +43,6 @@ MaxQueryCostEstimationTime = 4000 ; in seconds
 MaxQueryExecutionTime = 600 ; in seconds 
 ````
 
-
 3) Start the server
 
 ```cd /usr/local/Cellar/virtuoso/7.0.0/var/lib/virtuoso/db```
@@ -50,13 +51,15 @@ MaxQueryExecutionTime = 600 ; in seconds
 
 4) Go to [http://localhost:8890](http://localhost:8890) > Conductor > and type a standard username: ```dba``` and password: ```dba```
 
-5) Go to ```loadToVirtuoso.sh``` script and change a path to a folder where all the files are stored. Save it. 
+*** LOAD graphs to Virtuoso ***
 
-6) Make the file executable: ```chmod +x loadToVirtuoso.sh```
+1) Go to ```loadToVirtuoso.sh``` script and change a path to a folder where all the files are stored. Save it. 
 
-7) Run script ```./loadToVirtuoso.sh```
+2) Make the file executable: ```chmod +x loadToVirtuoso.sh```
 
-8) Go to [http://localhost:8890/sparql](http://localhost:8890/sparql) and check if your graphs are properly added
+3) Run script ```./loadToVirtuoso.sh```
+
+4) Go to [http://localhost:8890/sparql](http://localhost:8890/sparql) and check if your graphs are properly added
 
 ```SELECT ?g COUNT(*) { GRAPH ?g {?s ?p ?o.} } GROUP BY ?g ORDER BY DESC 2```
 
