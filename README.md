@@ -7,7 +7,7 @@ Assuming you don't have it just follow the steps from the beginning. It's a Mac 
 
 You can skip Homebrew and Virtuoso installations if you already have then installed.
 
-***Homebrew installation***
+##Homebrew installation
 
 Download the latest version of the Homebrew though its official [website](http://brew.sh/)
 Easiest way would be to just use the following command in the terminal
@@ -20,7 +20,7 @@ $ brew update
 #Then you can check the status of the installation by running the following command.
 $ brew doctor
 ````
-*** Virtuoso installation ****
+##Virtuoso installation
 
 1) install Virtuoso
 
@@ -51,7 +51,7 @@ MaxQueryExecutionTime = 600 ; in seconds
 
 4) Go to [http://localhost:8890](http://localhost:8890) > Conductor > and type a standard username: ```dba``` and password: ```dba```
 
-*** LOAD graphs to Virtuoso ***
+## LOAD graphs to Virtuoso
 
 1) Go to ```loadToVirtuoso.sh``` script and change a path to a folder where all the files are stored. Save it. 
 
