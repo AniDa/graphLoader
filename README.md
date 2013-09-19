@@ -27,16 +27,16 @@ MaxQueryExecutionTime      	= 600	; in seconds
 3) Start the server
 
 ```cd /usr/local/Cellar/virtuoso/7.0.0/var/lib/virtuoso/db```
+
 ```virtuoso-t -f &``` 
 
 4) Go to ```http://localhost:8890``` > Conductor > and type a standard username: ```dba``` and password: ```dba```
 
 5) Go to ```loadToVirtuoso.sh``` script and change a path to a folder where all the files are stored. Save it. 
 
-6) make the file executable: ```chmod +x loadToVirtuoso.sh```
+6) Make the file executable: ```chmod +x loadToVirtuoso.sh```
 
-7) run script
-``` ./loadToVirtuoso.sh```
+7) Run script ```./loadToVirtuoso.sh```
 
 8) Go to ```http://localhost:8890/sparql``` and check if your graphs are properly added
 
