@@ -1,11 +1,13 @@
 graphLoader
 ===========
 
-This script loads graphs under separate named graphs in Virtuoso 7.0.0. How to do it? First, you need Virtuoso. 
-Assuming you don't have it just follow the steps from the beginning. It's a Mac OS X installation.
+This script loads graphs under separate named graphs in Virtuoso 7.0.0. 
+
+First, you need Virtuoso. Assuming you don't have it just follow the steps from 
+the beginning. It's a Mac OS X installation.
 
 
-You can skip Homebrew and Virtuoso installations if you already have then installed.
+You can skip Homebrew and Virtuoso installations if you already have them installed.
 
 ##Homebrew installation
 
