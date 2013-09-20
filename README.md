@@ -36,7 +36,8 @@ $ brew doctor
 
 Change the following values and save the file:
 
-```` [Parameters]
+```` 
+[Parameters]
 NumberOfBuffers = 340000
 MaxDirtyBuffers = 250000
 
