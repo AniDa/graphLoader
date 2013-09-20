@@ -38,6 +38,10 @@ Change the following values and save the file:
 NumberOfBuffers = 340000
 MaxDirtyBuffers = 250000
 
+[Database]
+MaxCheckpointRemap = 625000
+
+
 [SPARQL]
 MaxQueryCostEstimationTime = 4000 ; in seconds
 MaxQueryExecutionTime = 600 ; in seconds 
