@@ -3,8 +3,8 @@ graphLoader
 
 This script loads graphs under separate named graphs in Virtuoso 7.0.0. 
 
-First, you need Virtuoso. Assuming you don't have it just follow the steps from 
-the beginning. It's a Mac OS X installation.
+First, you need Virtuoso. Assuming you don't have it just follow the steps 
+from the beginning. It's a Mac OS X installation.
 
 
 You can skip Homebrew and Virtuoso installations if you already have them installed.
@@ -30,9 +30,10 @@ $ brew doctor
 
 2) go to ```virtuoso.ini``` and change couple of values there:
 
-```cd /usr/local/Cellar/virtuoso/7.0.0/var/lib/virtuoso/db```
-
-```vim virtuoso.ini```
+````
+cd /usr/local/Cellar/virtuoso/7.0.0/var/lib/virtuoso/db
+vim virtuoso.ini
+````
 
 Change the following values and save the file:
 
@@ -44,19 +45,21 @@ MaxDirtyBuffers = 250000
 [Database]
 MaxCheckpointRemap = 625000
 
-
 [SPARQL]
 MaxQueryCostEstimationTime = 4000 ; in seconds
 MaxQueryExecutionTime = 600 ; in seconds 
 ````
 
-3) Start the server
+3) Download ```rdfloader.sql``` from this repository and place it in ```/usr/local/Cellar/virtuoso```
 
-```cd /usr/local/Cellar/virtuoso/7.0.0/var/lib/virtuoso/db```
+4) Start the server
 
-```virtuoso-t -f &``` 
+````
+cd /usr/local/Cellar/virtuoso/7.0.0/var/lib/virtuoso/db
+virtuoso-t -f &
+```` 
 
-4) Go to [http://localhost:8890](http://localhost:8890) > Conductor > and type a standard username: ```dba``` and password: ```dba```
+5) Go to [http://localhost:8890](http://localhost:8890) > Conductor > and type a standard username: ```dba``` and password: ```dba```
 
 ## LOAD graphs to Virtuoso
 
