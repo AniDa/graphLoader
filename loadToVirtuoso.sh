@@ -19,7 +19,7 @@
 _port=1111 # Define port (1111 is a default port)
 _db_user="dba" # Define a database username
 _db_password="dba" # Define a database password. Please note that the passowrd has to be used. If not the script will require some small changes 
-_folder_location="/Users/AniDa/Desktop/rdfs" # Change it to the location of the folder, which stores all RDF files that will be loaded to Virtuoso
+_folder_location="path to a folder location" # Change it to the location of the folder, which stores all RDF files that will be loaded to Virtuoso
 
 
 
