@@ -19,7 +19,7 @@
 _port=1111 # Define port (1111 is a default port)
 _db_user="dba" # Define a database username
 _db_password="dba" # Define a database password. Please note that the passowrd has to be used. If not the script will require some small changes 
-_folder_location="[path to a folder location]" # Change it to the location of the folder, which stores all RDF files that will be loaded to Virtuoso
+_folder_location="/Users/AniDa/Desktop/rdfs" # Change it to the location of the folder, which stores all RDF files that will be loaded to Virtuoso
 
 
 
@@ -53,7 +53,7 @@ do
 	gzip -dc $_rdf_file > $_rdf_file_no_gz
 	
 	# remove zipped file (it's not needed  for uploading to Virtuoso)
-	rm -rf $_rdf_file    
+	#rm -rf $_rdf_file    
 done
 
 #------------------------------------------------------
@@ -84,7 +84,7 @@ do
   
   # define graph name for each file
   _graph_URI="http://${_rdf_file_extensionless}"
-    echo $_graph_URI
+    #echo $_graph_URI
   
   #write graph URI to a graph file  
   echo $_graph_URI > $_graph_file
@@ -95,27 +95,13 @@ done
 # Load all files to Virtuoso under separate graphs
 #-----------------------------------------------
 
-# get a list of all directiories and then upload graphs from these directories
-_virtuoso_directories=`find $_rdf_directory -type d`
-
-for _dir in ${_virtuoso_directories[@]}
-do
-echo "$_dir"
-
-# Login to isql environment
-  # Load RDF loader
-  # Register the files in separate graphs
-  # Start the process
-  
 /usr/local/opt/virtuoso/bin/isql $_port $_db_user $_db_password << EOF
 
-  LOAD /usr/local/Cellar/virtuoso/rdfloader.sql;
-  ld_dir_all('$_dir', '*.nt', '');
-  rdf_loader_run();
-  EXIT;  
-  
-  EOF
+LOAD /usr/local/Cellar/virtuoso/rdfloader.sql;
+ld_dir_all('$_rdf_directory', '*.nt', '');
+rdf_loader_run();
+EXIT;  
 
-done
+EOF
 
 exit
